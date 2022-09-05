@@ -1,0 +1,16 @@
+1. For 403 Access Denied on Tomcat
+
+Solution:
+
+Find the CATALINA_HOME/webapps/manager/META-INF/context.xml file and add the comment markers around the Valve.
+
+<Context antiResourceLocking="false" privileged="true" >
+
+<!--
+<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+</Context>
+
+
+
